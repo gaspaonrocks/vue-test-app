@@ -2,6 +2,22 @@
 
 > A test app to experiment with vue
 
+## Building Modules
+
+You can place everything in the same .vue file or linking the src to their specific tag
+
+```
+<script src="path/to/file"></script>
+```
+
+is exactly the same as 
+
+```
+<script>
+  *insert here awesome code*
+</script>
+```
+
 ## Build Setup
 
 ``` bash
