@@ -5,9 +5,16 @@
         <img class="header-logo-resizer" src="../../assets/logo.png">
         <span class="title">Vue-Test-App</span>
       </div>
-      <div class="header-nav">
-        <a href="javascript://" class="active nav-link nav-text">Dashboard</a>
-        <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+      <div v-if="loading">
+        <span class="spinner spinner-inline">
+          Loading...
+        </span>
+        <span>
+          Loading...
+        </span>
+      </div>
+      <div v-if="!loading" class="header-nav">
+        <router-link :to="link.name" class="nav-link nav-text" v-for="link in data" :key="link.id">{{link.name}}</router-link>
       </div>
       <div class="header-actions">
         <a href="javascript://" class="nav-link nav-icon">
@@ -15,27 +22,8 @@
         </a>
       </div>
     </header>
-    <nav class="subnav">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Management</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cloud</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tenants</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="content-container">
-      <div class="content-area">
-        <router-view></router-view>
-      </div>
-    </div>
+    <subnav></subnav>
+    <window></window>
   </div>
 </template>
 

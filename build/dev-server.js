@@ -42,14 +42,19 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
+// le reverse proxy ne fonctionne pas donc en attendant j'utilise la méthode à l'ancienne
+const api = require('../server/routes/api')
+app.use('/api', api())
+
 // proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
+// doesnt work
+/* Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
   if (typeof options === 'string') {
     options = { target: options }
   }
   app.use(proxyMiddleware(options.filter || context, options))
-})
+}) */
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())

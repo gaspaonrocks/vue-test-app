@@ -1,0 +1,23 @@
+<template>
+  <nav class="subnav">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cloud</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tenants</a>
+      </li>
+    </ul>
+  </nav>
+  </div>
+</template>
+
+<style src='./Subnav.style.css'></style>
+
+<script src='./Subnav.script.js'></script>
