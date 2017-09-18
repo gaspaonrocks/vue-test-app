@@ -1,8 +1,8 @@
 <template>
-  <nav class="subnav">
+  <nav v-if="this.loaded" class="subnav">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Dashboard</a>
+        <a class="nav-link" href="#">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Management</a>
@@ -15,7 +15,6 @@
       </li>
     </ul>
   </nav>
-  </div>
 </template>
 
 <style src='./Subnav.style.css'></style>

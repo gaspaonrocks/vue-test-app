@@ -1,10 +1,3 @@
-import Vue from 'vue'
-import subnav from '../subnav/Subnav.vue'
-import window from '../window/Window.vue'
-
-Vue.component('subnav', subnav)
-Vue.component('window', window)
-
 export default {
   name: 'navbar',
   data () {
@@ -24,14 +17,17 @@ export default {
     '$route': 'fetchData'
   },
   methods: {
-    fetchData () {
+    fetchData ($route) {
       this.error = null
       this.loading = true
+
+      // TODO Comprendre comment le router fonctionne !
+      // console.log('navbar state name', $route)
 
       this.$http.get('/api/category').then(response => {
         this.loading = false
         this.data = response.body
-        console.log('success', this.data)
+        // console.log('success', this.data)
       }).catch(err => {
         this.error = err.toString()
       })

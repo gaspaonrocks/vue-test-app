@@ -1,8 +1,8 @@
 <template>
-  <div class="main-container">
+  <div>
     <header class="header header-6">
       <div class="branding">
-        <img class="header-logo-resizer" src="../../assets/logo.png">
+        <router-link to="/"><img class="header-logo-resizer" src="../../../assets/logo.png"></router-link>
         <span class="title">Vue-Test-App</span>
       </div>
       <div v-if="loading">
@@ -14,7 +14,7 @@
         </span>
       </div>
       <div v-if="!loading" class="header-nav">
-        <router-link :to="link.name" class="nav-link nav-text" v-for="link in data" :key="link.id">{{link.name}}</router-link>
+        <router-link :to="link.name.toLowerCase()" class="nav-link nav-text" v-for="link in data" :key="link.id">{{link.name}}</router-link>
       </div>
       <div class="header-actions">
         <a href="javascript://" class="nav-link nav-icon">
@@ -22,8 +22,6 @@
         </a>
       </div>
     </header>
-    <subnav></subnav>
-    <window></window>
   </div>
 </template>
 

@@ -1,0 +1,75 @@
+[
+  {
+    "_ref": "education",
+    "highschool": {
+      "name": "Lycée Pasteur",
+      "location": "Neuilly/Seine",
+      "diploma": "Baccaleuréat",
+      "section": "Scientifique",
+      "mention": "Assez Bien"
+    },
+    "undergraduate": {
+      "name": "Paris 5 René Descartes",
+      "location": "Paris",
+      "diploma": "Licence",
+      "section": "Sciences du Vivant",
+      "mention": null
+    },
+    "graduate": {
+      "name": "Grenoble Joseph Fourier",
+      "location": "Grenoble",
+      "diploma": "Master",
+      "section": "Biologie Cellulaire et Moléculaire",
+      "mention": null
+    }
+  },
+  {
+    "_ref": "experience",
+    "latest": {
+      "job": "Full Stack Developper",
+      "companies": {
+        "name": "onepoint",
+        "period": "september 2017 - january 2018",
+        "location": "Pessac, France",
+        "status": "intern",
+        "website": "https://www.groupeonepoint.com"
+      }
+    },
+    "fastfood industry": {
+      "job": "Crew Trainer",
+      "companies": {
+        "name:": "McDonalds",
+        "period": "february 2014 - may 2016",
+        "location": "Bordeaux, France",
+        "status": "crew trainer",
+        "website": "https://www.macdonalds.com"
+      }
+    },
+    "waiting": {
+      "job": "Waiter, Bartender, Barista",
+      "companies": [
+        {
+          "name:": "Pizza Pino",
+          "period": "february 2014 - may 2016",
+          "location": "Bordeaux, France",
+          "status": "many",
+          "website": "https://www.pizzapino.com"
+        },
+        {
+          "name:": "Pizza Peppone",
+          "period": "february 2014 - may 2016",
+          "location": "Bordeaux, France",
+          "status": "runner",
+          "website": "https://www.peppone.com"
+        }
+      ]
+    },
+    "before": {
+      "name": "Grenoble Joseph Fourier",
+      "location": "Grenoble",
+      "diploma": "Master",
+      "section": "Biologie Cellulaire et Moléculaire",
+      "mention": null
+    }
+  }
+]

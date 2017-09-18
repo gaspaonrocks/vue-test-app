@@ -1,14 +1,21 @@
 <template>
   <div id="app">
     <navbar></navbar>
+    <subnav></subnav>
+    <window></window>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import navbar from './components/navbar/Navbar'
+
+import navbar from './components/layout/navbar/Navbar'
+import subnav from './components/layout/subnav/Subnav'
+import window from './components/layout/window/Window'
 
 Vue.component('navbar', navbar)
+Vue.component('window', window)
+Vue.component('subnav', subnav)
 
 export default {
   name: 'app'

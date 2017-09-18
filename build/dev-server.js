@@ -47,7 +47,7 @@ const api = require('../server/routes/api')
 app.use('/api', api())
 
 // proxy api requests
-// doesnt work
+// TODO doesnt work, need to check proxyMiddleware
 /* Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
   if (typeof options === 'string') {
