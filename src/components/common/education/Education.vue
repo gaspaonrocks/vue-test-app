@@ -1,5 +1,5 @@
 <template>
-  <div id=education class="container">
+  <div class="container">
     <ul v-if="data" class="row">
       <li v-for="item in data" :key="item.id" class="col-xs-4">
         <div class="card">

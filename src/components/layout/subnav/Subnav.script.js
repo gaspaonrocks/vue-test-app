@@ -1,3 +1,5 @@
+import { HTTP } from '../../modules/http/http'
+
 export default {
   name: 'subnav',
   data () {
@@ -6,6 +8,7 @@ export default {
       loaded: false,
       error: null,
       data: null,
+      route: null,
       state: null
     }
   },
@@ -18,23 +21,33 @@ export default {
     '$route': 'loadData'
   },
   methods: {
-    loadData ($route) {
+    loadRoute () {
+      this.route = this.$route.name.toLowerCase()
+    },
+    loadData () {
+      this.loadRoute()
       this.error = null
       // reset the value to false before reaching API
       this.loaded = false
-      this.state = this.$route.name.toLowerCase()
 
       // don't need subnav in landing page
-      if (this.state !== 'hello') {
-        this.$http.get('api/subcategory', { params: { state: this.state } }).then(response => {
-          this.loaded = true
-          this.data = response.body
-
-          console.log('success', this.data)
-        }).catch(err => {
-          this.error = err.toString()
+      if (this.route !== 'hello') {
+        // calling the axios module method
+        HTTP.get('subcategory', {
+          // adding query parameters
+          params: {
+            route: this.route
+          }
         })
+          .then(response => {
+            this.loaded = true
+            this.data = response.data
+          })
+          .catch(e => {
+            this.error = e
+          })
       }
     }
-  }
+  },
+  props: ['data._ref']
 }

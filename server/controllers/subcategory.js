@@ -11,15 +11,10 @@ module.exports = function SubcategoriesController () {
           if (err) next(err);
           else res.json(categories);
       }) */
-    let params = req.query.state
-    let resData = []
+    let params = req.query.route
+    let resData = data
+      .filter(x => x._ref === params)
 
-    data.forEach((i) => {
-      if (i._ref === params) {
-        resData.push(i)
-      }
-    })
-
-    res.json(resData)
+    res.json(resData[0])
   }
 }

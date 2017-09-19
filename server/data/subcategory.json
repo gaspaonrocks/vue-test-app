@@ -1,27 +1,40 @@
 [
   {
     "_ref": "education",
-    "highschool": {
-      "name": "Lycée Pasteur",
-      "location": "Neuilly/Seine",
-      "diploma": "Baccaleuréat",
-      "section": "Scientifique",
-      "mention": "Assez Bien"
-    },
-    "undergraduate": {
-      "name": "Paris 5 René Descartes",
-      "location": "Paris",
-      "diploma": "Licence",
-      "section": "Sciences du Vivant",
-      "mention": null
-    },
-    "graduate": {
-      "name": "Grenoble Joseph Fourier",
-      "location": "Grenoble",
-      "diploma": "Master",
-      "section": "Biologie Cellulaire et Moléculaire",
-      "mention": null
-    }
+    "steps": [
+      {
+        "level": "highschool",
+        "name": "Lycée Pasteur",
+        "location": "Neuilly/Seine, France",
+        "diploma": "Baccaleuréat",
+        "section": "Scientifique",
+        "mention": "Assez Bien"
+      },
+      {
+        "level": "undergraduate",
+        "name": "Paris 5 René Descartes",
+        "location": "Paris, France",
+        "diploma": "Licence",
+        "section": "Sciences du Vivant",
+        "mention": null
+      },
+      {
+        "level": "graduate",
+        "name": "Grenoble Joseph Fourier",
+        "location": "Grenoble, France",
+        "diploma": "Master",
+        "section": "Biologie Cellulaire et Moléculaire",
+        "mention": null
+      },
+      {
+        "level": "after",
+        "name": "Wild Code School",
+        "location": "Bordeaux, France",
+        "diploma": "Titre Développeur Logiciel",
+        "section": "Développement Web Javascript",
+        "mention": null
+      }
+    ]
   },
   {
     "_ref": "experience",

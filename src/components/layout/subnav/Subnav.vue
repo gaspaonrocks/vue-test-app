@@ -1,17 +1,8 @@
 <template>
-  <nav v-if="this.loaded" class="subnav">
+  <nav v-if="loaded" class="subnav">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Management</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cloud</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tenants</a>
+      <li class="nav-item" v-for="link in data.steps" :key="link.id">
+        <router-link class="nav-link" :to="link.level">{{link.level}}</router-link>
       </li>
     </ul>
   </nav>

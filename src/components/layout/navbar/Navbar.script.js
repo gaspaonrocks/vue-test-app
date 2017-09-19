@@ -1,3 +1,5 @@
+import { HTTP } from '../../modules/http/http'
+
 export default {
   name: 'navbar',
   data () {
@@ -24,13 +26,14 @@ export default {
       // TODO Comprendre comment le router fonctionne !
       // console.log('navbar state name', $route)
 
-      this.$http.get('/api/category').then(response => {
-        this.loading = false
-        this.data = response.body
-        // console.log('success', this.data)
-      }).catch(err => {
-        this.error = err.toString()
-      })
+      HTTP.get('category')
+        .then(response => {
+          this.loading = false
+          this.data = response.data
+        })
+        .catch(e => {
+          this.error = e.toString()
+        })
     }
   }
 }
