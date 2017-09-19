@@ -1,4 +1,5 @@
 import { HTTP } from '../../modules/http/http'
+import { StateHub } from '../../modules/state-observer/state'
 
 export default {
   name: 'subnav',
@@ -8,8 +9,7 @@ export default {
       loaded: false,
       error: null,
       data: null,
-      route: null,
-      state: null
+      route: null
     }
   },
   created () {
@@ -17,19 +17,15 @@ export default {
     this.loadData()
   },
   watch: {
-    // call again the method if route changes
     '$route': 'loadData'
   },
   methods: {
-    loadRoute () {
-      this.route = this.$route.name.toLowerCase()
-    },
     loadData () {
-      this.loadRoute()
       this.error = null
       // reset the value to false before reaching API
       this.loaded = false
 
+      this.route = this.$route.name.toLowerCase()
       // don't need subnav in landing page
       if (this.route !== 'hello') {
         // calling the axios module method
@@ -47,7 +43,9 @@ export default {
             this.error = e
           })
       }
+    },
+    setState (obj) {
+      return StateHub.setState(obj)
     }
-  },
-  props: ['data._ref']
+  }
 }

@@ -12,14 +12,11 @@ export default {
   created () {
     // fetch the data when view is created and the data is
     // already being observed
-    this.fetchData()
+    this.fetchData
   },
-  watch: {
-    // call again the method if route changes
-    '$route': 'fetchData'
-  },
-  methods: {
-    fetchData ($route) {
+  watch: {},
+  computed: {
+    fetchData: function ($route) {
       this.error = null
       this.loading = true
 
@@ -35,5 +32,6 @@ export default {
           this.error = e.toString()
         })
     }
-  }
+  },
+  methods: {}
 }

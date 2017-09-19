@@ -1,10 +1,20 @@
+import { StateHub } from '../../modules/state-observer/state'
+
 export default {
   name: 'education',
   data () {
     return {
-      data: null
+      data: null,
+      state: 'default'
     }
   },
-  created () { },
-  methods: {}
+  created () {
+    StateHub.$on('notify', () => {
+      this.state = StateHub.getState()
+      console.log('new state in component', this.state)
+    })
+  },
+  watch: {},
+  methods: {},
+  computed: {}
 }
