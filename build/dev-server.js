@@ -75,12 +75,6 @@ var uri = 'http://localhost:' + port
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve
-  var db = require('../server/models')
-  db.authenticate().then(() => {
-    console.log('connection success')
-  }).catch((e) => {
-    console.error('not so fast', e)
-  })
 })
 
 console.log('> Starting dev server...')
@@ -94,8 +88,6 @@ devMiddleware.waitUntilValid(() => {
 })
 
 var server = app.listen(port)
-
-
 
 module.exports = {
   ready: readyPromise,

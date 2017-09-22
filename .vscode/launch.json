@@ -42,6 +42,12 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceRoot}\\build\\dev-server.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch server test",
+      "program": "${workspaceRoot}\\server.js"
     }
   ]
 }

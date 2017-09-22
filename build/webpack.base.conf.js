@@ -1,7 +1,9 @@
 var path = require('path')
+var fs = require('fs')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var nodeExternals = require('webpack-node-externals')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -24,6 +26,9 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+ /*  target: 'node',
+  externals: [nodeExternals()],
+  externals: fs.readdirSync('node_modules').filter((x) => { return x !== '.bin'; }), */
   module: {
     rules: [
       {
@@ -43,7 +48,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test')],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

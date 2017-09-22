@@ -4,6 +4,7 @@ const router = express.Router()
 // Require locally the function we need
 let setCategoryRoutes = require('./category')
 let setSubcategoryRoutes = require('./subcategory')
+let setUserRoutes = require('./testUser')
 
 let data = require('../data/data.json')
 
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
 module.exports = function () {
   setCategoryRoutes(router)
   setSubcategoryRoutes(router)
+  setUserRoutes(router)
 
   return router
 }
