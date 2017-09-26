@@ -7,11 +7,6 @@ let data = require('../data/category.json')
 
 module.exports = function CategoriesController () {
   this.find = (req, res, next) => {
-    /*   Category.find(req.query, (err, categories) => {
-          if (err) next(err);
-          else res.json(categories);
-      }) */
-
     res.json(data)
   }
 }

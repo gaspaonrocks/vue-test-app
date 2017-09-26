@@ -1,8 +1,5 @@
 'use strict'
 
-/* Importer le modèle de la base de données
-Category from local url
-penser à garder la fonction de lecture de modèles */
 let models = require('../models')
 
 let faker = require('faker')
@@ -20,11 +17,6 @@ module.exports = function UserController () {
           .then(() => { res.json(user) })
       })
       .catch(e => { console.error(e) })
-    // Table created
-    /*  User.create(user, (err, user) => {
-       if (err) console.warn(err)
-       else res.json(user)
-     }) */
   }
 
   this.list = (req, res, next) => {
